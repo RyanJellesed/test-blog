@@ -40,7 +40,18 @@ router.route('/bears')
 				res.json(bear);
 			}
 		});
+	})
+
+	.get(function(req, res) {
+		Bear.find(function(err, bears) {
+			if(err) {
+				console.log(err);
+			}else{
+				res.json(bears);
+			}
+		});
 	});
+
 
 app.use('/api', router);
 
