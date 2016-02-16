@@ -39,7 +39,7 @@ router.route('/bears')
 				//do something
 				res.json(bear);
 			}
-		});
+		})
 	})
 
 	.get(function(req, res) {
@@ -49,8 +49,22 @@ router.route('/bears')
 			}else{
 				res.json(bears);
 			}
-		});
-	});
+		})
+	})
+
+router.route('/bears/:bear_id')
+	.get(function(req, res) {
+		Bear.findById(req.params.bear_id, function (err, bear) {
+			// body...
+			if(err) {
+				console.log(err);
+			}else{
+				res.json(bear);
+			}
+		})
+	})
+
+
 
 
 app.use('/api', router);
@@ -68,4 +82,3 @@ router.route('/bears').get(function(req, res) {
 
 app.listen(port);
 console.log('Magic happens on port ' + port);
-
