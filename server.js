@@ -15,9 +15,21 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-	res.render('index', {title: 'Hipster Ipsum!'})
-	res.render('index', {date: newDate()})
-})
+	res.render('index', {title: 'This is my bears app.'})
+});
+
+
+app.get('/about', function(req, res) {
+	var data = {};
+	data.title = 'About Page';
+	data.name = 'Ryan';
+	data.time = new Date();
+
+	res.render('about', data);
+});
+
+
+
 
 var port = process.env.PORT || 8080;
 
