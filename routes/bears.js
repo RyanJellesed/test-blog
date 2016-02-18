@@ -9,6 +9,7 @@ router.route('/bears')
 	.post(function(req, res) {
 
 		var bear = new Bear();
+		
 		bear.name = req.body.name;
 		bear.age = req.body.age;
 		bear.gender = req.body.gender;

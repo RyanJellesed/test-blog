@@ -14,10 +14,11 @@
  	<body>
 		<div class="container">
 		<div class="jumbotron">
-        <div class="container">
+            <div class="container">
             <h1>My Bears</h1>
             <table class="table table-hover">
                 <thead>
+                    <h3>My Bears Table</h3>
                     <tr>
                         <th>Name</th>
                         <th>Age</th>
@@ -25,26 +26,63 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <% for( var i = 0; i < bears.length; i++) { %>
                     <tr>
-                        <td>Ryan</td>
-                        <td>32</td>
-                        <td>Male</td>
+
+                        <td> <%= bears[i].name %> </td>
+                        <td> <%= bears[i].age %> </td>
+                        <td> <%= bears[i].gender %> </td>
+                        <td><button class="btn btn-warning deleteBear">Delete</button></td>
+                        
                     </tr>
-                    <tr>
-                        <td>Mike</td>
-                        <td>33</td>
-                        <td>Male</td>
-                    </tr>
+                    <% } %>
                 </tbody>
+
+                
+
+
 
             </table>
                	<p>
-                	<a class="btn btn-primary btn-lg" href="/">Home</a>
-                	<a class="btn btn-primary btn-lg" href="about">About</a>
+                	<a class="btn btn-primary btn-lg btn-primary" href="/">Home</a>
+                    <a class="btn btn-primary btn-lg btn-primary" href="bears">Bears</a>
+                    <a class="btn btn-primary btn-lg btn-info" href="about">About Page</a>
             	</p>
         	</div>
    		</div>
    		</div>
+
+        <div class="container">
+            <form action="/api/bears" method="POST" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <legend>Enter Bears Here:</legend>
+                    </div>
+
+                    <div class="form-group">
+                         <input type="text" name="name" id="name" class="form-control" value="" required="required"   placeholder="Name">
+                    </div>
+
+                     <div class="form-group">
+                        <input type="number" name="age" id="age" class="form-control" value="" required="required"   placeholder="Age">
+                    </div>  
+
+                     <div class="form-group">
+                       <input type="text" name="gender" id="gender" class="form-control" value="" required="required"   placeholder="Gender"> 
+                    </div>      
+
+                                  
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-2">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        
+                    </div>
+
+            </form>
+        </div>
 
         
         <script src=https://code.jquery.com/jquery-2.2.0.js></script>
