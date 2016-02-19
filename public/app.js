@@ -3,7 +3,7 @@ var deleteBear = function () {
 
 
 
-	var id = $(event.target).closest('tr')attr('id');
+	var id = $(event.target).closest('tr').attr('id');
 	var bear = $(event.target).closest('tr');
 
 	if (confirm('Are you sure you want to delete this bear?')) {
