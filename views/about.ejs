@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-
  <html>
  	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> <%= title %> </title>
 
- 		<title> <%= title %> </title>
-
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
- 		<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="main.css">
 
  	</head>	
-
- 	<body>
-		<div class="container">
-		<div class="jumbotron">
+	<body class="container">
+	<div class="jumbotron">
         <div class="container">
-            <h1>This is the <%= title %> </h1>
+            <h3>This is the <%= title %> </h3>
             <p>about stuff ..</p>
             <p>The current time is: <%= time %> </p>
             <p>My name is <%= name %> </p>
@@ -23,16 +21,10 @@
                 	<a class="btn btn-primary btn-lg btn-primary" href="/">Home</a>
                 	<a class="btn btn-primary btn-lg btn-primary" href="bears">Bears</a>
                 	<a class="btn btn-primary btn-lg btn-info" href="about">About Page</a>
-            	</p>
-        	</div>
-   		</div>
-   		</div>
-
-	
-
-
-
-
+            	</p> <!-- clsoing button div -->
+        	</div> <!-- closing container div -->
+   		</div> <!-- closing Jumbotron div -->
+   		
 
 		<script src=https://code.jquery.com/jquery-2.2.0.js></script>
 
@@ -43,5 +35,6 @@
  	</body>
 
  </html>
+
 
  
