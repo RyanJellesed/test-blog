@@ -1,8 +1,6 @@
 var deleteBear = function () {
 
 
-
-
 	var id = $(event.target).closest('tr').attr('id');
 	var bear = $(event.target).closest('tr');
 
