@@ -14,7 +14,7 @@ router.use(function(req, res, next) {
 
 
 
-router.route('/bears')  // ?????
+router.route('/bears')  // router is a new express worker that will handle all our bear routes
 	.post(function(req, res) {  // 
 
 		var bear = new Bear(); // calling schema and constructing a new bear
