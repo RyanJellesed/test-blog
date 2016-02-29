@@ -1,38 +1,69 @@
+
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
 
- <html>
- 	<head>
+    <title>The Blog</title>
 
- 		<title></title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
- 		<link rel="stylesheet" href="main.css">
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet">
 
+    </head>
 
- 	</head>	
+  <body>
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<img class="logo" src="../img/blog_title_jellesed.png" alt="theBlog">
+				</div>
+				<div class="col-md-6">
+	
+				</div>
+			</div>
+		</div>		
+	</header>
 
- 	<body>
-
-		<div class="jumbotron">
-        <div class="container">
-
-        <% if(user.local) { %>
+	<div class="container container-main">
+		
+		<% if(user.local) { %>
 			<%= user.local.email %>
 			<% } else { %>
 				<%= user %>	
 		<% } %>
-        	<%- include ./partials/navbar.ejs %>
+		<!-- this is including the partial navbar --> 
+		<%- include ./partials/navbar.ejs %>
+
+		
+		<div class="row">
+			<div class="col-md-8">
+				<div class="well">
+					
+					<div class="container">
+
+        
+        	
         	<div class="row">
         	<h1> This is my Blog </h1>
 
-        	<div class="col-md-6">
+        	
             
             <p>Tote bag pickled cardigan echo park, portland keffiyeh fixie bespoke master cleanse pop-up bitters paleo. Green juice chia gochujang farm-to-table. Gochujang craft beer man bun whatever salvia. Microdosing jean shorts skateboard, chartreuse organic swag hashtag meditation kickstarter mumblecore farm-to-table. Flannel celiac marfa beard XOXO, trust fund mlkshk blog pinterest etsy PBR&B pug single-origin coffee roof party. Fixie microdosing dreamcatcher selfies, deep v keytar XOXO you probably haven't heard of them sustainable messenger bag gentrify hammock. Butcher seitan brooklyn artisan, offal vice yr cold-pressed semiotics YOLO pour-over affogato franzen tousled.
 			</p> <!-- end first p -->
-			</div> <!-- end 1st col -->
+			
 
-			<div class="col-md-6">
+			<div class="col-md-8">
 			<p>
 			Occupy deep v chambray sriracha asymmetrical, tilde semiotics tousled. Man braid direct trade normcore waistcoat authentic, small batch cold-pressed mlkshk cliche kale chips neutra paleo pabst leggings cray. Waistcoat skateboard keffiyeh YOLO. Migas wolf heirloom helvetica. Typewriter gluten-free echo park, keytar church-key listicle hoodie put a bird on it swag street art polaroid poutine. Lo-fi small batch distillery post-ironic. Direct trade plaid kombucha hammock, readymade chillwave cred letterpress 90's try-hard banjo tilde bushwick wayfarers.
 			</p> <!-- end second p -->
@@ -55,23 +86,93 @@
 
             	</p>
         	</div>
-   		</div>
+					
+				
 
-	
+				
+
+				
+					
+				</div>
+
+			</div>
+			<div class="col-md-4">
+				<div class="well">
+					<h4>Blog Search</h4>
+					<div class="input-group">
+						<input type="text" class="form-control">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
+					</div>
+				</div>
+
+				<div class="well">
+					<h4>Categories</h4>
+					<div class="row">
+						<div class="col-md-6">
+							<ul class="list-unstlyed">
+								<li><a href="#">Category Name</a>
+								</li>
+								<li><a href="#">Category Name</a>
+								</li>
+								<li><a href="#">Category Name</a>
+								</li>
+								<li><a href="#">Category Name</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-6">
+							<ul class="list-unstlyed">
+								<li><a href="#">Category Name</a>
+								</li>
+								<li><a href="#">Category Name</a>
+								</li>
+								<li><a href="#">Category Name</a>
+								</li>
+								<li><a href="#">Category Name</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="well">
+					<h4>Sidebar Widget</h4>
+					<p>Raw denim salvia readymade, truffaut microdosing pitchfork locavore tumblr bushwick. Semiotics franzen +1, swag kinfolk pabst fanny pack austin four loko. Artisan thundercats fingerstache mixtape. Butcher organic iPhone gluten-free, franzen cornhole sartorial.</p>
+				</div>
+
+				
+
+			</div>		
+		</div>
+	</div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/main.js"></script>
+
+  </body>
+</html>
 
 
 
 
 
-		<script src=https://code.jquery.com/jquery-2.2.0.js></script>
 
- 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
- 	
-		<script src="server.js"></script>
-		<script src='app.js'></script>
- 	</body>
 
- </html>
+
+
+
+
+
 
  
 
