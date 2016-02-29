@@ -19,6 +19,8 @@
 
         <% if(user.local) { %>
 			<%= user.local.email %>
+			<% } else { %>
+				<%= user %>	
 		<% } %>
         	<%- include ./partials/navbar.ejs %>
         	<div class="row">
