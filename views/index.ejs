@@ -16,9 +16,14 @@
 
 		<div class="jumbotron">
         <div class="container">
+
+        <% if(user.local) { %>
+			<%= user.local.email %>
+		<% } %>
         	<%- include ./partials/navbar.ejs %>
         	<div class="row">
-        	<h1> <%= title %> </h1>
+        	<h1> This is my Blog </h1>
+
         	<div class="col-md-6">
             
             <p>Tote bag pickled cardigan echo park, portland keffiyeh fixie bespoke master cleanse pop-up bitters paleo. Green juice chia gochujang farm-to-table. Gochujang craft beer man bun whatever salvia. Microdosing jean shorts skateboard, chartreuse organic swag hashtag meditation kickstarter mumblecore farm-to-table. Flannel celiac marfa beard XOXO, trust fund mlkshk blog pinterest etsy PBR&B pug single-origin coffee roof party. Fixie microdosing dreamcatcher selfies, deep v keytar XOXO you probably haven't heard of them sustainable messenger bag gentrify hammock. Butcher seitan brooklyn artisan, offal vice yr cold-pressed semiotics YOLO pour-over affogato franzen tousled.

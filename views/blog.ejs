@@ -117,43 +117,17 @@
 			<div class="col-md-8">
 				 <% for( var i = 0; i < blogPosts.length; i++) { %>
 					<div class="well blog-post" >
-						<h3><a href="../post.html"> <%= blogPosts[0].post %> </a></h3>
-						<p class="post-info"><i class="glyphicon glyphicon-time"></i> Posted by Ryan Jellesed on  </p>
+						<h3><a href="../post.html"> <%= blogPosts[i].post %> </a></h3>
+						<p class="post-info"><i class="glyphicon glyphicon-time"></i> Posted by Ryan Jellesed on  <%= blogPosts[i].date %> %</p>
 						<hr>
-						<img src="../img/human-i-require-assistance-31.jpg" class="img-responsive">
+						<img src="<%= blogPosts[i].pic %>" class="img-responsive">
 						<hr>
 						<p>  </p>
 						<a class="btn btn-primary" href="/blogPosts">Read More <span class="glyphicon glyphicon-chevron-right"></a>
 
 					</div>
 				
-				<div class="well blog-post">
-					<h3><a href="../post.html"> Blog Post Two </a></h3>
-					<p class="post-info"><i class="glyphicon glyphicon-time"></i> Posted by Ryan Jellesed on  </p>
-					<hr>
-					<img src="../img/IMG_20151222_163904-PANO.jpg" class="img-responsive">
-					<hr>
-					<p>  </p>
-					<a href="btn btn-primary" href="post.html">Read More <span class="glyphicon glyphicon-chevron-right"></a>
-
-
-
-				</div>
-
-
-
-				<div class="well blog-post">
-					<h3><a href="../post.html">Blog Post Three</a></h3>
-					<p class="post-info"><i class="glyphicon glyphicon-time"></i> Posted by Ryan Jellesed on  </p>
-					<hr>
-					<img src="../img/IMG_20151225_131949.jpg" class="img-responsive">
-					<hr>
-					<p>  </p>
-					<a href="btn btn-primary" href="post.html">Read More <span class="glyphicon glyphicon-chevron-right"></a>
-
 				
-
-				</div>
 
 				<% } %>
 

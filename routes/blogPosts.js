@@ -19,7 +19,8 @@ router.route('/blogPosts')  // router is a new express worker that will handle a
 
 		var blogPost = new BlogPost(); // calling schema and constructing a new bear
 
-		blogPost.post = req.body.post; // pulling the data from the request (can come from our form or Postman or somewhere else)
+		blogPost.post = req.body.post;
+		blogPost.pic = req.body.pic; // pulling the data from the request (can come from our form or Postman or somewhere else)
 		blogPost.date = req.body.date; // same as above
 
 		// .save is a model of mongoose.model.save

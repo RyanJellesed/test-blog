@@ -10,6 +10,7 @@ var Schema = mongoose.Schema;  // mongoose.Schema is a method on Schema
 // String Number String are the data types we will be using
 var BlogPostSchema = new Schema({
 	postTitle: String,
+	pic: String,
 	post: String,// name, value pairs
 	date: Date,// name, value pairs
 

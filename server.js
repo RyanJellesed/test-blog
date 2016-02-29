@@ -66,7 +66,8 @@ var port = process.env.PORT || 8080; // this sets the port we are going to use
 // the function parametes are a Request, Response pair
 //  
 app.get('/', function(req, res) {
-	res.render('index', {title: 'This is my blog.'})
+	var user = req.user || "no user";
+	res.render('index', {user: user})
 	// if our index gets a request
 	// we will render a response of 'This is my bears app.'
 });

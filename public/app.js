@@ -22,11 +22,13 @@ var addBlogPost = function(event){
 	event.preventDefault();
 
 	var post = $('#post').val();
+	var pic = $('#pic').val();
 	var date = $('#date').val();
 	var $table = $('#blogPostTable');
 
 	var blogPost = {};
 	blogPost.post = post;
+	blogPost.pic = pic;
 	blogPost.date = date;
 
 		$.ajax({
