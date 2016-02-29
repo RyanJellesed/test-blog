@@ -1,26 +1,64 @@
 var express    = require('express'); // makes sure the express library can be used in our code otherwise our code will not know what express is
 var app        = express();
 var bodyParser = require('body-parser'); // body parser is a package and the 'require' says to pull in body-parser into express
-
+var passport = require('passport');
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://localhost/blogPosts');
+
+var session = require('express-session');
+var flash = require('connect-flash');
 
 var blogPostRouter = require ('./routes/blogPosts');
 
 var BlogPost       = require('./models/blogPosts');
 
+
+
+
 app.use(bodyParser.urlencoded({ extended: true}));  // app.use is the important part.  It mounts middleware. You need the rest, 'Harold says he doesn't even really understand it'
 app.use(bodyParser.json());
 
+// ===============================================================================
 
+app.use(session({
+ secret: 'ilovescotchscotchyscotchscotch'
+})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(session({
+ cookie: {
+   maxAge: 60000
+ }
+}));
+app.use(flash());
+
+require('./config/passport')(passport);
+// routes ======================================================================
+require('./routes/user.js')(app, passport);
 
 
 app.use(express.static('public')); //  configures to use all the files in the public folder as static files
+// ===============================================================================
+
+
+app.use(function (req, res, next) {
+	var user = req.user || "no user";
+	// every request we make to our server this is going to check if their is 
+	// a user
+	console.log(user);
+	next();
+});
+
+
+
+
+// ===============================================================================
 
 app.set('view engine', 'ejs');
 
 var port = process.env.PORT || 8080; // this sets the port we are going to use 
 
+// ===============================================================================
 
 // app.get connects to our router to our app
 // it looks in our index which is represented by our /
