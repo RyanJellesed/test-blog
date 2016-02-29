@@ -1,60 +1,56 @@
-var deleteBear = function () {
+var deleteBlogPost = function () {
 
 
 	var id = $(event.target).closest('tr').attr('id');
-	var bear = $(event.target).closest('tr');
+	var blogPost = $(event.target).closest('tr');
 
-	if (confirm('Are you sure you want to delete this bear?')) {
+	if (confirm('Are you sure you want to delete this blog post?')) {
 		$.ajax({
-			url: '/api/bears/' + id,
+			url: '/api/blogPosts/' + id,
 			method: 'DELETE',
 		}).done(function(){
-			console.log('bear deleted!');
-			bear.remove();
+			console.log('blog post deleted!');
+			blogPost.remove();
 		})
 	}
 }
 
 
-$('.deleteBear').on('click', deleteBear);
+$('.deleteBlogPost').on('click', deleteBlogPost);
 
-var addBear = function(event){
+var addBlogPost = function(event){
 	event.preventDefault();
 
-	var name = $('#name').val();
-	var age = $('#age').val();
-	var gender = $('#gender').val();
-	var $table = $('#bearTable');
+	var post = $('#post').val();
+	var date = $('#date').val();
+	var $table = $('#blogPostTable');
 
-	var bear = {};
-	bear.name = name;
-	bear.age = age;
-	bear.gender = gender;
+	var blogPost = {};
+	blogPost.post = post;
+	blogPost.date = date;
 
 		$.ajax({
-			url: '/api/bears',
+			url: '/api/blogPosts',
 			method: 'POST',
-			data: bear
+			data: blogPost
 		}).done(function(data){
 
-			console.log('I posted a bear!', data);
+			console.log('I posted a blog post!', data);
 
 			$table.append('<tr id=' + data._id + '> \
-							<td>' + data.name + '</td> \
-							<td>' + data.age + '</td> \
-							<td>' + data.gender + '</td> \
+							<td>' + blogPost.post + '</td> \
+							<td>' + blogPost.date + '</td> \
 							<td><button class="btn btn-warning deleteBear">delete</button></td> \
 						</tr>'
 					);
-			$('.deleteBear').on('click', deleteBear);
-			$('#name').val('');
-			$('#age').val('');
-			$('#gender').val('');
+			$('.deleteBlogPost').on('click', deleteBlogPost);
+			$('#post').val('');
+			$('#date').val('');
 		})
 
 };
 
-$('#addBear').on('click', addBear);
+$('#addBlogPost').on('click', addBlogPost);
 
 
 

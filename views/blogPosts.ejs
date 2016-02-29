@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+ 	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+ 		
+    <title>My Blog Posts</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<link rel="stylesheet" href="main.css">
+
+</head>	
+<body class="container">
+	<div class="jumbotron">
+        <p>
+            <a href="/" class="btn btn-primary">home</a>
+        </p>
+    <div class="container">
+        <h3>My Blog Posts</h3>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Posts</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="blogPostTable">
+                <% for( var i = 0; i < blogPosts.length; i++) { %>
+                    <tr id="<%= blogPosts[i]._id %>">
+
+                        <td> <%= blogPosts[i].post %> </td>
+                        <td> <%= blogPosts[i].date %> </td>
+                        <td><button class="btn btn-warning deleteBlogPost">Delete</button></td>
+
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="container">
+        <form class="form-inline" role="form">
+
+            <div class="form-group">
+                <label class="sr-only" for=""></label>
+                <input required name="post" type="text" class="form-control" id="post" placeholder="post">          
+            </div>
+
+             <div class="form-group">
+                <label class="sr-only" for=""></label>
+                <input required name="title" type="text" class="form-control" id="title" placeholder="title">          
+            </div>
+
+            <div class="form-group">
+                <label class="sr-only" for=""></label>
+                <input required name="date" type="date" class="form-control" id="date" placeholder="date">          
+            </div>
+
+            <button type="submit" id="addBlogPost" class="btn btn-primary">create</button>
+
+        </form>
+    </div>
+</div>
+
+
+
+</body>
+<script src='https://code.jquery.com/jquery-2.2.0.js'></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+<script src="app.js"></script>
+</html>
+
+
+

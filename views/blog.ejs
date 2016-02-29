@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+
+    <title>Blog Jellesed</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+
+
+
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet">
+
+    </head>
+
+  <body>
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<img class="logo" src="../img/blog_title_jellesed.png" alt="Blog Jellesed">
+				</div>
+				<div class="col-md-6">
+	
+				</div>
+			</div>
+		</div>		
+	</header>
+
+	<div class="container container-main">
+		<!-- includes navbar from the partials folder -->
+		
+		<%- include ./partials/navbar.ejs %>
+
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner">
+		    
+
+		    <div class="item active">
+		      <img src="../img/IMG_20151213_105438.jpg" alt="Slide One">
+		      <div class="carousel-caption">
+		        <h4><a href="post.html"></a>Loving Life on Crystal Mountain</h4>
+		        <p>Hashtag ethical selvage fixie, 90's chicharrones retro. Chambray biodiesel taxidermy, tilde green juice sustainable mumblecore. YOLO selfies bushwick irony. Street art kombucha mlkshk YOLO. YOLO organic cliche, post-ironic leggings cornhole chambray kinfolk brooklyn VHS taxidermy roof party cray four loko fixie. Cold-pressed flannel meditation mumblecore, quinoa blue bottle squid hammock irony cronut health goth put a bird on it authentic blog williamsburg. Ennui knausgaard kale chips, literally freegan pork belly DIY austin selvage blog cardigan ramps sartorial.</p>
+		      </div>
+		    </div> <!-- Item end -->
+
+			<div class="item">
+		      <img src="../img/IMG_20151004_175342.jpg" alt="Slide Two">
+		      <div class="carousel-caption">
+		        <h4><a href="post.html"></a>Best Friends</h4>
+		        <p>Small batch bitters four dollar toast, poutine cronut try-hard health goth scenester fashion axe chartreuse retro sriracha. Beard photo booth cronut chambray. Scenester neutra letterpress small batch plaid, dreamcatcher fashion axe tote bag chambray tilde quinoa chartreuse roof party pug blog. Raw denim literally food truck cray pour-over authentic. Selfies pinterest craft beer, occupy viral four loko heirloom hella swag meditation. Roof party man bun portland, williamsburg ugh wayfarers XOXO art party typewriter +1. Street art kogi kombucha cardigan, truffaut bitters celiac.</p>
+		      </div>
+		    </div> <!-- Item end -->
+
+		    <div class="item">
+		      <img src="../img/IMG_20151225_132336.jpg" alt="Slide Three">
+		      <div class="carousel-caption">
+		        <h4><a href="post.html"></a>Coming Home</h4>
+		        <p>Swag microdosing man braid, raw denim sustainable brunch readymade meggings gluten-free kickstarter fap pinterest lomo vinyl. Master cleanse pork belly fingerstache cold-pressed shoreditch, craft beer meh tote bag aesthetic migas banjo bicycle rights kitsch kickstarter meditation. Cred scenester 90's wayfarers. Chia umami aesthetic bicycle rights actually selfies, tumblr fanny pack wayfarers paleo. VHS bitters gastropub irony church-key. Master cleanse skateboard drinking vinegar cold-pressed. Humblebrag taxidermy quinoa pickled thundercats fixie.</p>
+		      </div>
+		    </div> <!-- Item end -->
+
+		    <div class="item">
+		      <img src="../img/IMG_20151129_171553.jpg" alt="Slide Four">
+		      <div class="carousel-caption">
+		        <h4><a href="post.html"></a>Bright Lights Small City</h4>
+		        <p>Echo park shoreditch pour-over quinoa slow-carb. Aesthetic marfa meggings pop-up bushwick yuccie mumblecore. Disrupt street art brooklyn tattooed, kogi bespoke flannel chia small batch slow-carb semiotics trust fund. Neutra semiotics affogato messenger bag four loko. Salvia bitters forage, godard man braid messenger bag marfa. Messenger bag fashion axe master cleanse, actually small batch pickled DIY venmo chillwave mixtape blog listicle cronut salvia. Affogato fingerstache green juice, helvetica franzen +1 bushwick listicle occupy.</p>
+		      </div>
+		    </div> <!-- Item end -->
+
+		    <div class="item">
+		      <img src="../img/IMG_20151201_110821.jpg" alt="Slide Five">
+		      <div class="carousel-caption">
+		        <h4><a href="post.html"></a>Big Sky</h4>
+		        <p>Stumptown iPhone vice salvia cray, vegan tofu letterpress bespoke gastropub hammock flexitarian portland art party mustache. Small batch distillery kale chips, tousled next level etsy hoodie +1 lo-fi deep v humblebrag scenester raw denim normcore typewriter. Try-hard banjo tofu, yuccie fap kale chips flannel hashtag fashion axe pop-up biodiesel actually scenester sriracha vice. Portland fap salvia hammock godard fingerstache lomo synth, bitters before they sold out put a bird on it wolf. Mumblecore portland messenger bag gastropub direct trade normcore, artisan shabby chic. Truffaut DIY vinyl pickled ennui occupy. Everyday carry iPhone salvia pickled, food truck neutra you probably haven't heard of them cliche.</p>
+		      </div>
+		    </div> <!-- Item end -->
+
+		  
+		  </div> <!-- Carousel Inner end -->
+
+			<ul class="list-group slider-list col-md-4">
+				<li data-target="#myCarousel" data-slide-to="0" class="list-group-item active">
+					<img src="../img/IMG_20151213_105438.jpg" class="img-thumbnail img-slide"> <h4>Loving Life on Crystal Mountain</h4>
+					<p>Tofu pabst franzen, literally etsy pitchfork four dollar toast</p>
+				</li>
+				<li data-target="#myCarousel" data-slide-to="1" class="list-group-item">
+					<img src="../img/IMG_20151004_175342.jpg" class="img-thumbnail img-slide"> <h4>Best Friends</h4>
+					<p>Freegan man bun wolf tilde, asymmetrical kitsch YOLO</p>
+				</li>
+				<li data-target="#myCarousel" data-slide-to="2" class="list-group-item">
+					<img src="../img/IMG_20151225_132336.jpg" class="img-thumbnail img-slide"> <h4>Coming Home</h4>
+					<p>Mixtape williamsburg skateboard craft beer.</p>
+				</li>
+				<li data-target="#myCarousel" data-slide-to="3" class="list-group-item">
+					<img src="../img/IMG_20151129_171553.jpg" class="img-thumbnail img-slide"> <h4>Bright Lights Small City</h4>
+					<p>Ramps XOXO pork belly, sustainable health goth disrupt.</p>
+				</li>
+				<li data-target="#myCarousel" data-slide-to="4" class="list-group-item">
+					<img src="../img/IMG_20151201_110821.jpg" class="img-thumbnail img-slide"> <h4>Big Sky</h4>
+					<p>Biodiesel sustainable church-key, mixtape tilde etsy fap.</p>
+				</li>
+			</ul>
+
+
+		 
+		</div> <!-- carousel closing div -->
+		
+		<div class="row">
+			<div class="col-md-8">
+				 <% for( var i = 0; i < blogPosts.length; i++) { %>
+					<div class="well blog-post" >
+						<h3><a href="../post.html"> <%= blogPosts[0].post %> </a></h3>
+						<p class="post-info"><i class="glyphicon glyphicon-time"></i> Posted by Ryan Jellesed on  </p>
+						<hr>
+						<img src="../img/human-i-require-assistance-31.jpg" class="img-responsive">
+						<hr>
+						<p>  </p>
+						<a class="btn btn-primary" href="/blogPosts">Read More <span class="glyphicon glyphicon-chevron-right"></a>
+
+					</div>
+				
+				<div class="well blog-post">
+					<h3><a href="../post.html"> Blog Post Two </a></h3>
+					<p class="post-info"><i class="glyphicon glyphicon-time"></i> Posted by Ryan Jellesed on  </p>
+					<hr>
+					<img src="../img/IMG_20151222_163904-PANO.jpg" class="img-responsive">
+					<hr>
+					<p>  </p>
+					<a href="btn btn-primary" href="post.html">Read More <span class="glyphicon glyphicon-chevron-right"></a>
+
+
+
+				</div>
+
+
+
+				<div class="well blog-post">
+					<h3><a href="../post.html">Blog Post Three</a></h3>
+					<p class="post-info"><i class="glyphicon glyphicon-time"></i> Posted by Ryan Jellesed on  </p>
+					<hr>
+					<img src="../img/IMG_20151225_131949.jpg" class="img-responsive">
+					<hr>
+					<p>  </p>
+					<a href="btn btn-primary" href="post.html">Read More <span class="glyphicon glyphicon-chevron-right"></a>
+
+				
+
+				</div>
+
+				<% } %>
+
+				<!-- Pager -->
+			<ul class="pager">
+				<li class="previous">
+					<a href="#">&larr; Older</a>
+				</li>
+				<li class="next">
+					<a href="#">&rarr; Next</a>
+				</li>
+
+			</ul>
+			</div>
+			<div class="col-md-4">
+				<div class="well">
+					<h4>Blog Search</h4>
+					<div class="input-group">
+						<input type="text" class="form-control">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
+					</div>
+				</div>
+
+				<div class="well">
+					<h4>Categories</h4>
+					<div class="row">
+						<div class="col-md-6">
+							<ul class="list-unstlyed">
+								<li><a href="#">Category Name</a>
+								</li>
+								<li><a href="#">Category Name</a>
+								</li>
+								<li><a href="#">Category Name</a>
+								</li>
+								<li><a href="#">Category Name</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-6">
+							<ul class="list-unstlyed">
+								<li><a href="#">Category Name</a>
+								</li>
+								<li><a href="#">Category Name</a>
+								</li>
+								<li><a href="#">Category Name</a>
+								</li>
+								<li><a href="#">Category Name</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="well">
+					<h4>YouTube Rabbit Hole</h4>
+					<p>Raw denim salvia readymade, truffaut microdosing pitchfork locavore tumblr bushwick. Semiotics franzen +1, swag kinfolk pabst fanny pack austin four loko. Artisan thundercats fingerstache mixtape. Butcher organic iPhone gluten-free, franzen cornhole sartorial.</p>
+					<p><iframe width="300" height="169" src="https://www.youtube.com/embed/W3TtS1wkb7M" frameborder="0" allowfullscreen></iframe></p>
+					<p><iframe width="300" height="169" src="https://www.youtube.com/embed/I0tE6T-ecmg" frameborder="0" allowfullscreen></iframe></p>
+					<iframe width="300" height="169" src="https://www.youtube.com/embed/EKR-HydGohQ" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>		
+		</div>
+	</div>
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+    <script src="../public/js/bootstrap.js"></script>
+    <script src="../public/js/main.js"></script>
+
+	<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<script src="server.js"></script>
+	<script src='app.js'></script>
+  </body>
+</html>

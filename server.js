@@ -3,13 +3,11 @@ var app        = express();
 var bodyParser = require('body-parser'); // body parser is a package and the 'require' says to pull in body-parser into express
 
 var mongoose   = require('mongoose');
-mongoose.connect('mongodb://localhost/animals');
+mongoose.connect('mongodb://localhost/blogPosts');
 
-var bearRouter = require ('./routes/bears');
+var blogPostRouter = require ('./routes/blogPosts');
 
-var itsBrokens = 'broken'
-
-var Bear       = require('./models/bears');
+var BlogPost       = require('./models/blogPosts');
 
 app.use(bodyParser.urlencoded({ extended: true}));  // app.use is the important part.  It mounts middleware. You need the rest, 'Harold says he doesn't even really understand it'
 app.use(bodyParser.json());
@@ -30,22 +28,32 @@ var port = process.env.PORT || 8080; // this sets the port we are going to use
 // the function parametes are a Request, Response pair
 //  
 app.get('/', function(req, res) {
-	res.render('index', {title: 'This is my bears app.'})
+	res.render('index', {title: 'This is my blog.'})
 	// if our index gets a request
 	// we will render a response of 'This is my bears app.'
 });
 
 
-app.get('/bears', function(req, res) {
-	Bear.find(function(err, bears) {
+app.get('/blog', function(req, res) {
+	BlogPost.find(function(err, blogPosts) {
 		if(err) {
 			console.log(err);
 		} else {
-			res.render('bears', { bears: bears })
+			res.render('blog', { blogPosts: blogPosts })
 		}
 	})
 });
 	
+app.get('/blogPosts', function(req, res) {
+	BlogPost.find(function(err, blogPosts) {
+		if(err) {
+			console.log(err);
+		} else {
+			res.render('blogPosts', { blogPosts: blogPosts })
+		}
+	})
+});
+
 
 app.get('/about', function(req, res) {
 	var data = {};
@@ -56,8 +64,21 @@ app.get('/about', function(req, res) {
 	res.render('about', data);
 });
 
+app.get('/contact', function (req, res) {
+	res.render('contact');
+})
 
-app.use('/api', bearRouter);  // app.get needs this app.use in order to be used as middleware 
+app.get('/blog', function (req, res) {
+	res.render('blogPosts');
+})
+
+app.get('/comment', function (req, res) {
+	res.render('comment');
+})
+
+
+
+app.use('/api', blogPostRouter);  // app.get needs this app.use in order to be used as middleware 
 
 // we debug server js in our terminal
 // if this works we will see the string in our terminal
