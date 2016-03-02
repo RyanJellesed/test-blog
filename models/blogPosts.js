@@ -9,10 +9,11 @@ var Schema = mongoose.Schema;  // mongoose.Schema is a method on Schema
 // name: age: gender: are keys
 // String Number String are the data types we will be using
 var BlogPostSchema = new Schema({
+	author: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 	postTitle: String,
 	pic: String,
 	post: String,// name, value pairs
-	date: Date,// name, value pairs
+	date: {type: Date, default: Date.now },// name, value pairs
 
 	 // closing all your objects without a comma ',' is encouraged by some style guides and may be a best practice
 });

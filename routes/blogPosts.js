@@ -17,8 +17,15 @@ router.use(function(req, res, next) {
 router.route('/blogPosts')  // router is a new express worker that will handle all our bear routes
 	.post(function(req, res) {  // 
 
-		var blogPost = new BlogPost(); // calling schema and constructing a new bear
+		var u = req.user || "no user"
+		console.log("USER MAKING POST:", u);
 
+
+
+		var blogPost = new BlogPost(); // calling schema and constructing a new bear
+		
+		blogPost.author = req.user._id || "56d4b688d3a8e52f48000001";
+		blogPost.postTitle = req.body.title;
 		blogPost.post = req.body.post;
 		blogPost.pic = req.body.pic; // pulling the data from the request (can come from our form or Postman or somewhere else)
 		blogPost.date = req.body.date; // same as above
@@ -37,7 +44,9 @@ router.route('/blogPosts')  // router is a new express worker that will handle a
 	})
 
 	.get(function(req, res) {
-		BlogPost.find(function(err, blogPosts) { // looking for the collection of all our bear models. Looking for all the objects of bear.
+		BlogPost.find()
+		.populate('author')
+		.exec(function(err, blogPosts) { // looking for the collection of all our bear models. Looking for all the objects of bear.
 			if(err) {
 				return next(err);
 			} else {

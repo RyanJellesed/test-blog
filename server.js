@@ -12,7 +12,7 @@ var blogPostRouter = require ('./routes/blogPosts');
 
 var BlogPost       = require('./models/blogPosts');
 
-
+var tweetRoutes = require('./routes/tweets');
 
 
 app.use(bodyParser.urlencoded({ extended: true}));  // app.use is the important part.  It mounts middleware. You need the rest, 'Harold says he doesn't even really understand it'
@@ -41,13 +41,13 @@ app.use(express.static('public')); //  configures to use all the files in the pu
 // ===============================================================================
 
 
-app.use(function (req, res, next) {
-	var user = req.user || "no user";
-	// every request we make to our server this is going to check if their is 
-	// a user
-	console.log(user);
-	next();
-});
+// app.use(function (req, res, next) {
+// 	var user = req.user || "no user";
+// 	// every request we make to our server this is going to check if their is 
+// 	// a user
+// 	console.log(user);
+// 	next();
+// });
 
 
 
@@ -65,59 +65,70 @@ var port = process.env.PORT || 8080; // this sets the port we are going to use
 // the / is not needed but is a best practice to point at our root directory
 // the function parametes are a Request, Response pair
 //  
+
+
+
 app.get('/', function(req, res) {
-	var user = req.user || "no user";
-	res.render('index', {user: user})
-	// if our index gets a request
-	// we will render a response of 'This is my bears app.'
-});
-
-
-app.get('/blog', function(req, res) {
+	var user = req.user || "no user"
 	BlogPost.find(function(err, blogPosts) {
 		if(err) {
 			console.log(err);
 		} else {
-			res.render('blog', { blogPosts: blogPosts })
+			res.render('blog', { blogPosts: blogPosts, user: user })
 		}
 	})
 });
 	
 app.get('/blogPosts', function(req, res) {
+	var user = req.user || "no user";
 	BlogPost.find(function(err, blogPosts) {
 		if(err) {
 			console.log(err);
 		} else {
-			res.render('blogPosts', { blogPosts: blogPosts })
+			res.render('blogPosts', { blogPosts: blogPosts, user: user })
 		}
 	})
 });
 
 
 app.get('/about', function(req, res) {
+
+	var user = req.user || "no user";
+
 	var data = {};
 	data.title = 'About Page';
 	data.name = 'Ryan';
 	data.time = new Date();
 
-	res.render('about', data);
+	res.render('about', {user: user});
 });
 
 app.get('/contact', function (req, res) {
-	res.render('contact');
+	var user = req.user || "no user";
+
+	res.render('contact', {user: user});
 })
 
 app.get('/blog', function (req, res) {
-	res.render('blogPosts');
+	var user = req.user || "no user";
+
+	res.render('blogPosts', {user: user});
 })
 
 app.get('/comment', function (req, res) {
-	res.render('comment');
+	var user = req.user || "no user";
+
+	res.render('comment', {user: user});
 })
 
-
+app.get('/social', function (req,res) {
+	var user = req.user || "no user";
+	res.render('social', { user: user });
+})
 
 app.use('/api', blogPostRouter);  // app.get needs this app.use in order to be used as middleware 
+
+app.use('/api/tweets/', tweetRoutes);
 
 // we debug server js in our terminal
 // if this works we will see the string in our terminal

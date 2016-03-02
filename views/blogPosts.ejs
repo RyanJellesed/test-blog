@@ -23,15 +23,18 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>Posts</th>
+                    <th>Title</th>
+                    <th>Post</th>
+                    <th>Picture</th>
                     <th>Date</th>
                 </tr>
             </thead>
             <tbody id="blogPostTable">
                 <% for( var i = 0; i < blogPosts.length; i++) { %>
                     <tr id="<%= blogPosts[i]._id %>">
-
+                        <td> <%= blogPosts[i].postTitle %> </td>
                         <td> <%= blogPosts[i].post %> </td>
+                        <td> <%= blogPosts[i].pic %> </td>
                         <td> <%= blogPosts[i].date %> </td>
                         <td><button class="btn btn-warning deleteBlogPost">Delete</button></td>
 
@@ -43,16 +46,16 @@
 
 
     <div class="container">
-        <form class="form-inline" role="form">
+        <form class="form-inline" action="/api/blogPosts" method="POST" role="form">
+
+            <div class="form-group">
+                <label class="sr-only" for=""></label>
+                <input required name="title" type="text" class="form-control" id="title" placeholder="title">          
+            </div>
 
             <div class="form-group">
                 <label class="sr-only" for=""></label>
                 <input required name="post" type="text" class="form-control" id="post" placeholder="post">          
-            </div>
-
-             <div class="form-group">
-                <label class="sr-only" for=""></label>
-                <input required name="title" type="text" class="form-control" id="title" placeholder="title">          
             </div>
 
              <div class="form-group">
@@ -65,7 +68,7 @@
                 <input required name="date" type="date" class="form-control" id="date" placeholder="date">          
             </div>
 
-            <button type="submit" id="addBlogPost" class="btn btn-primary">create</button>
+            <button type="submit" id="" class="btn btn-primary">create</button>
 
         </form>
     </div>

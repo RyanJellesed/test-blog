@@ -13,8 +13,9 @@ module.exports = function(app, passport) {
 
 
     app.get('/signup', function(req, res) {
+      var user = req.user || 'no user'
         // render the page and pass in any flash data if it exists
-        res.render('signup.ejs', {
+        res.render('signup.ejs', { user: user,
             message: req.flash('signupMessage')
         });
     });
@@ -27,8 +28,9 @@ module.exports = function(app, passport) {
    }));
 
    app.get('/login', function(req, res) {
+    var user = req.user || 'no user'
        // render the page and pass in any flash data if it exists
-       res.render('login.ejs', {
+       res.render('login.ejs', { user: user,
            message: req.flash('loginMessage')
        });
    });
