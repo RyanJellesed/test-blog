@@ -78,7 +78,6 @@ app.use(express.static('public')); //  configures to use all the files in the pu
 
 app.set('view engine', 'ejs');
 
-var port = process.env.PORT || 8080; // this sets the port we are going to use 
 
 // ===============================================================================
 
@@ -90,15 +89,19 @@ var port = process.env.PORT || 8080; // this sets the port we are going to use
 
 
 
+// app.get('/', function(req, res) {
+// 	var user = req.user || "no user"
+// 	BlogPost.find(function(err, blogPosts) {
+// 		if(err) {
+// 			console.log(err);
+// 		} else {
+// 			res.render('blog', { blogPosts: blogPosts, user: user })
+// 		}
+// 	})
+// });
+
 app.get('/', function(req, res) {
-	var user = req.user || "no user"
-	BlogPost.find(function(err, blogPosts) {
-		if(err) {
-			console.log(err);
-		} else {
-			res.render('blog', { blogPosts: blogPosts, user: user })
-		}
-	})
+			res.render('blog')
 });
 	
 app.get('/blogPosts', function(req, res) {
@@ -156,6 +159,8 @@ app.use('/api/tweets/', tweetRoutes);
 // added this for the nodemailer GET send an email
 app.use('/contact', contact);
 // ===============================================================================
+
+var port = process.env.PORT || 8080; // this sets the port we are going to use 
 
 
 // we debug server js in our terminal
