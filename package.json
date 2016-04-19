@@ -9,13 +9,14 @@
     "ejs": "^2.4.1",
     "express": "~4.0.0",
     "express-session": "^1.13.0",
+    "mongodb-uri": "^0.9.7",
     "mongoose": "~3.6.13",
+    "nodemailer": "*",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "twit": "^2.2.2",
-    "nodemailer": "*"
+    "twit": "^2.2.2"
   },
   "engines": {
-   "node": "0.12.7"
- }
+    "node": "0.12.7"
+  }
 }
