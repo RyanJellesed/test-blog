@@ -89,19 +89,15 @@ app.set('view engine', 'ejs');
 
 
 
-// app.get('/', function(req, res) {
-// 	var user = req.user || "no user"
-// 	BlogPost.find(function(err, blogPosts) {
-// 		if(err) {
-// 			console.log(err);
-// 		} else {
-// 			res.render('blog', { blogPosts: blogPosts, user: user })
-// 		}
-// 	})
-// });
-
 app.get('/', function(req, res) {
-			res.render('blog')
+	var user = req.user || "no user"
+	BlogPost.find(function(err, blogPosts) {
+		if(err) {
+			console.log(err);
+		} else {
+			res.render('blog', { blogPosts: blogPosts, user: user })
+		}
+	})
 });
 	
 app.get('/blogPosts', function(req, res) {
@@ -114,7 +110,6 @@ app.get('/blogPosts', function(req, res) {
 		}
 	})
 });
-
 
 app.get('/about', function(req, res) {
 
