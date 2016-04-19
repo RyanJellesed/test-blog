@@ -14,8 +14,8 @@
     "passport-local": "^1.0.0",
     "twit": "^2.2.2",
     "nodemailer": "*"
-  }
-},
+  },
   "engines": {
    "node": "0.12.7"
  }
+}
