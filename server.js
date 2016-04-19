@@ -1,9 +1,31 @@
 var express    = require('express'); // makes sure the express library can be used in our code otherwise our code will not know what express is
 var app        = express();
 var bodyParser = require('body-parser'); // body parser is a package and the 'require' says to pull in body-parser into express
-var passport = require('passport');
+var passport   = require('passport');
 var mongoose   = require('mongoose');
-mongoose.connect('mongodb://localhost/blogPosts');
+
+// ===============================================================================
+// mlab code for heroku
+var uriUtil = require('mongodb-uri');
+
+var options = {
+server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
+};  
+var mongodbUri = process.env.MONGOLAB_URI || "mongodb://localhost/blogPosts";
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+mongoose.connect(mongooseUri, options);
+// ===============================================================================
+
+
+// ===============================================================================
+// nodemailer code
+var nodemailer = require('nodemailer');
+var contact = require('./routes/contact');
+// ===============================================================================
+
+
 
 var session = require('express-session');
 var flash = require('connect-flash');
@@ -129,6 +151,12 @@ app.get('/social', function (req,res) {
 app.use('/api', blogPostRouter);  // app.get needs this app.use in order to be used as middleware 
 
 app.use('/api/tweets/', tweetRoutes);
+
+// ===============================================================================
+// added this for the nodemailer GET send an email
+app.use('/contact', contact);
+// ===============================================================================
+
 
 // we debug server js in our terminal
 // if this works we will see the string in our terminal

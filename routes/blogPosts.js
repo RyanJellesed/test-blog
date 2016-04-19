@@ -93,7 +93,7 @@ router.route('/blogPosts/:blogPost_id')  // looking for bears by id in the /bear
 	})
 	.delete(function(req, res) {
 		// ask about the leading _id: (the underscore)
-		BlogPost.remove({_id: req.params.blogPost_id}, function(err, blogPost) {
+		BlogPost.remove({ _id: req.params.blogPost_id }, function(err, blogPost) {
 			if (err) {
 				console.log(err)
 			} else {
