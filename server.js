@@ -21,8 +21,8 @@ mongoose.connect(mongooseUri, options);
 
 // ===============================================================================
 // nodemailer code
-var nodemailer = require('nodemailer');
-var contact = require('./routes/contact');
+// var nodemailer = require('nodemailer');
+// var contact = require('./routes/contact');
 // ===============================================================================
 
 
@@ -152,7 +152,7 @@ app.use('/api/tweets/', tweetRoutes);
 
 // ===============================================================================
 // added this for the nodemailer GET send an email
-app.use('/contact', contact);
+// app.use('/contact', contact);
 // ===============================================================================
 
 var port = process.env.PORT || 8080; // this sets the port we are going to use 
