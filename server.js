@@ -4,6 +4,9 @@ var bodyParser = require('body-parser'); // body parser is a package and the 're
 var passport   = require('passport');
 var mongoose   = require('mongoose');
 
+// app.get('/', )
+var path       = require('path');
+
 // ===============================================================================
 // mlab code for heroku
 var uriUtil = require('mongodb-uri');
@@ -88,12 +91,12 @@ app.set('view engine', 'ejs');
 //  
 
 
+// for index.html in root directory also require path above
+/*app.get('/', function(req, res) {
+ res.sendFile(path.join(__dirname, 'index.html'));
+});*/
 
 app.get('/', function(req, res) {
- res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-/*app.get('/', function(req, res) {
 	var user = req.user || "no user"
 	BlogPost.find(function(err, blogPosts) {
 		if(err) {
@@ -102,7 +105,7 @@ app.get('/', function(req, res) {
 			res.render('blog', { blogPosts: blogPosts, user: user })
 		}
 	})
-});*/
+});
 	
 app.get('/blogPosts', function(req, res) {
 	var user = req.user || "no user";
