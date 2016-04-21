@@ -29,20 +29,20 @@ var TwitterCard = React.createClass({
 	                    	<div className="panel-heading">
 	                        	<h3 className="panel-title">Tweet Card</h3>
 	                        	<a href="#">
-	                    			<img className="img-circle" src={ tweet.profile_image } alt="twitter profile"/></a>
+	                    			<img className="img-circle" src={ tweet.profile_image } alt="twitter profile"/> 
+								</a>
 	                    	</div>
 	                    	
 	                    	<div className="panel-body">
-													<h4 className="media-heading"> { tweet.user_name } </h4>
-													<p> { tweet.text } </p>
-													<p> {tweet.created_at } </p>                 			
+								<h4 className="media-heading"> { tweet.user_name } </h4>
+								<p> { tweet.text } </p>
+								<p> {tweet.created_at } </p>                 			
 	                    	</div>
 	                    </div>
 	           	 	</div>  
             	</div>
 			)
 		})
-		
 		return (
 			<div>
 				{ twitterCards }
