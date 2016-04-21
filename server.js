@@ -158,7 +158,7 @@ app.use('/contact', contact);
 var port = process.env.PORT || 8080; // this sets the port we are going to use 
 
 
-// we debug server js in our terminal
+// we debug server js i n our terminal
 // if this works we will see the string in our terminal
 app.listen(port, function() {
 	// this prints in our terminal
