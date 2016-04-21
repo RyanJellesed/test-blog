@@ -90,6 +90,10 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', function(req, res) {
+ res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+/*app.get('/', function(req, res) {
 	var user = req.user || "no user"
 	BlogPost.find(function(err, blogPosts) {
 		if(err) {
@@ -98,7 +102,7 @@ app.get('/', function(req, res) {
 			res.render('blog', { blogPosts: blogPosts, user: user })
 		}
 	})
-});
+});*/
 	
 app.get('/blogPosts', function(req, res) {
 	var user = req.user || "no user";
