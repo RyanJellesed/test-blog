@@ -9,7 +9,7 @@ var TwitterCard = React.createClass({
 	loadTweetsFromServer: function () {
 		var self = this;
 		$.ajax({
-			url: '/api/tweets/drumpf',
+			url: '/api/tweets/"bill maher"',
 			method: 'GET'
 		}).done(function (data) {
 			self.setState({ tweets: data })
