@@ -1,3 +1,9 @@
+// ===============================================================================
+// dotenv  allows us to keep passwords, usernames etc separate from the source files
+// that may be uploaded to github, heroku etc. 
+require('dotenv').config();
+// ===============================================================================
+
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
@@ -13,8 +19,8 @@ router.post('/send', function(req, res) {
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'montanacodeschool@gmail.com',
-      pass: '7bS1LMuJDx2Q'
+      user: process.env.USER,
+      pass: process.env.PASS
     }
   });
 
