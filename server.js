@@ -8,7 +8,7 @@ var mongoose   = require('mongoose');
 var path       = require('path');
 
 // ===============================================================================
-// mlab code for heroku
+// mlab code for heroku   IMPORTANT FOR HEROKU ****************************
 var uriUtil = require('mongodb-uri');
 
 var options = {
@@ -99,14 +99,14 @@ app.set('view engine', 'ejs');
 });*/
 
 app.get('/', function(req, res) {
-	var user = req.user || "no user"
+	var user = req.user || "no user";
 	BlogPost.find(function(err, blogPosts) {
 		if(err) {
 			console.log(err);
 		} else {
-			res.render('blog', { blogPosts: blogPosts, user: user })
+			res.render('blog', { blogPosts: blogPosts, user: user });
 		}
-	})
+	});
 });
 	
 app.get('/blogPosts', function(req, res) {
@@ -115,9 +115,9 @@ app.get('/blogPosts', function(req, res) {
 		if(err) {
 			console.log(err);
 		} else {
-			res.render('blogPosts', { blogPosts: blogPosts, user: user })
+			res.render('blogPosts', { blogPosts: blogPosts, user: user });
 		}
-	})
+	});
 });
 
 app.get('/about', function(req, res) {
@@ -136,24 +136,24 @@ app.get('/contact', function (req, res) {
 	var user = req.user || "no user";
 
 	res.render('contact', {user: user});
-})
+});
 
 app.get('/blog', function (req, res) {
 	var user = req.user || "no user";
 
 	res.render('blogPosts', {user: user});
-})
+});
 
 app.get('/comment', function (req, res) {
 	var user = req.user || "no user";
 
 	res.render('comment', {user: user});
-})
+});
 
 app.get('/social', function (req,res) {
 	var user = req.user || "no user";
 	res.render('social', { user: user });
-})
+});
 
 app.use('/api', blogPostRouter);  // app.get needs this app.use in order to be used as middleware 
 
@@ -172,7 +172,7 @@ var port = process.env.PORT || 8080; // this sets the port we are going to use
 app.listen(port, function() {
 	// this prints in our terminal
 	// this was the specific terminal we did our nodemon server.js 
-	console.log('Magic happens on port ' + port)
+	console.log('Magic happens on port ' + port);
 });
 
 
