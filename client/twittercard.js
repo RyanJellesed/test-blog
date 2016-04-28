@@ -1,3 +1,5 @@
+var React = require ('react');
+
 var TwitterCard = React.createClass({
 	
 
@@ -9,7 +11,7 @@ var TwitterCard = React.createClass({
 	loadTweetsFromServer: function () {
 		var self = this;
 		$.ajax({
-			url: '/api/tweets/"bill maher"',
+			url: '/api/tweets/bill',
 			method: 'GET'
 		}).done(function (data) {
 			self.setState({ tweets: data })
@@ -29,7 +31,7 @@ var TwitterCard = React.createClass({
 	                    	<div className="panel-heading">
 	                        	<h3 className="panel-title">Tweet Card</h3>
 	                        	<a href="#">
-	                    			<img className="img-circle" src={ tweet.profile_image } alt="twitter profile"/> 
+	                    			<img className="img-circle" src={ tweet.profile_image_url } alt="twitter profile"/> 
 								</a>
 	                    	</div>
 	                    	
@@ -52,5 +54,4 @@ var TwitterCard = React.createClass({
 
 });
 
-React.render(<TwitterCard/>,
-	document.getElementById('twitter-card'));
+module.exports=TwitterCard;

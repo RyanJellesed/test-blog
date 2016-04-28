@@ -11,9 +11,9 @@ var deleteBlogPost = function () {
 		}).done(function(){
 			console.log('blog post deleted!');
 			blogPost.remove();
-		})
+		});
 	}
-}
+};
 
 
 $('.deleteBlogPost').on('click', deleteBlogPost);
@@ -48,7 +48,7 @@ var addBlogPost = function(event){
 			$('.deleteBlogPost').on('click', deleteBlogPost);
 			$('#post').val('');
 			$('#date').val('');
-		})
+		});
 
 };
 
