@@ -16,7 +16,7 @@
     "dotenv": "^2.0.0",
     "ejs": "^2.4.1",
     "mongodb-uri": "^0.9.7",
-    "mongoose": "^4.4.12",
+    "mongoose": "^5.9.10",
     "nodemailer": "*",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
